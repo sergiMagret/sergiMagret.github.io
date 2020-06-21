@@ -3,74 +3,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&display=swap');
 
+/***********************************/
+
 :root {
 	--green: #16F511;
 	--orange: #FFC801;
 	--red: #E63212;
+	--dark-red: hsl(354, 90%, 33%);
 	--purple: #800DFF;
-	--blue: #07CEF2;
+	--light-blue: hsl(200, 90%, 63%);
+	--blue: hsl(200, 100%, 33%);
+	--dark-blue: hsl(200, 100%, 4%);;
 	--white: hsl(0, 0%, 92%);
 }
 
 html {
 	font-family: Heebo, sans-serif;
 	background-color: var(--white);
+	font-size: 1rem;
 }
 
 header {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-end; /* Si s'afageix algun logo o algo canviar per space-between o space-around, per aixi quedi separat. */
 	position: fixed;
 	width: 100%;
 	height: 35px;
 	left: 0px;
 	top: 0px;
-	background-color: var(--red);
+	background-image: linear-gradient(0deg, transparent, var(--dark-blue));
 	z-index: 10;
 }
 
-main {
+body::before {
+	content: '';
+	position: absolute;
+	background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url("../img/backgrounds/sea-2661355_1920.jpg");
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+body {
+	display: block;
+	margin: 0px;
+	font-size: 1rem;
+}
+
+/**********************************************/
+
+.nav-bar {
+	font-family: Inconsolata, monospace;
+	display: block;
+}
+
+.nav-bar > ul {
+	width: 30vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.nav-bar > ul > li {
+	list-style: none;
+	transition: all 0.2s;
+	margin: 5px;
+}
+
+.nav-bar > ul > li:hover {
+	transform: scale(1.2);
+}
+
+.nav-link {
+	color: var(--white);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/**********************************************/
+
+#cover {
 	height: 100%;
 	width: 100%;
 }
 
-/**********************************************/
-.header_links {
-	font-family: Inconsolata, monospace;
-	font-size: 1em;
-	top: 0px;
-	height: 35px;
-	width: auto;
-	right: 20px;
-	display: flex;
-	position: absolute;
-}
-
-.header_link {
-	padding: 5px;
-	margin-left: 15px;
-	margin-right: 15px;
-}
-
-.header_link a {
-	color: black;
-	text-decoration-line: none;
-}
-
-.header_link a:hover{
+#main_name {
+	width: 100%;
 	color: var(--white);
-}
-
-.main_name {
-	width: 75%;
-	font-size: 1.5em;
-	color: var(--blue);
-	margin: 0 auto;
+	margin: 0px auto;
 	text-align: center;
 	position: relative;
-	top: 35vh;
+	top: 35%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
-.main_name p {
-	color: black;
+#main_name p {
+	color: var(--white);
+	font-size: 1.5em;
+}
+
+#main_name h1 {
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px 10px;
+	font-size: 3em;
+}
+
+#cover-copyright {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin: 5px;
+	color: white;
+	font-size: 0.4em;
+}
+
+#cover-copyright a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 /**********************************************/
+
+
+@media (max-width: 1000px) {
+	#main_name h1 {
+		font-size: 2em;
+	}
+}
