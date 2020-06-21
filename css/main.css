@@ -60,10 +60,11 @@ body {
 .nav-bar {
 	font-family: Inconsolata, monospace;
 	display: block;
+	margin-right: 2%;
 }
 
 .nav-bar > ul {
-	width: 30vw;
+	width: auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -73,7 +74,7 @@ body {
 .nav-bar > ul > li {
 	list-style: none;
 	transition: all 0.2s;
-	margin: 5px;
+	margin: 5px 15px;
 }
 
 .nav-bar > ul > li:hover {
