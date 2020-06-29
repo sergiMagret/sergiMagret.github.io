@@ -11,9 +11,11 @@ function updateNavBar() {
 	if(scroll_top > (window_height - header_height)){
 		$("header").css('background-color', 'var(--dark-blue)');
 		$("header").addClass('bottom-shadow');
+		$("#go-to-top").removeClass('invisible');
 	}else{
 		$("header").css('background-color', 'transparent');
 		$("header").removeClass('bottom-shadow');
+		$("#go-to-top").addClass('invisible');
 	}
 
 	//console.log($(window).scrollTop());
