@@ -1,13 +1,10 @@
+/* Function to update the navbar when the scroll is under the main image */
 function updateNavBar() {
 	let window_height = $(window).height();
 	let header_height = $("header").height();
 
-
-	//console.log(window_height);
-	//console.log(header_height);
-
 	let scroll_top = $(window).scrollTop();
-	//console.log("scroll:" + scroll_top + ", window_height - header_height: " + (window_height - header_height));
+
 	if(scroll_top > (window_height - header_height)){
 		$("header").css('background-color', 'var(--dark-blue)');
 		$("header").addClass('bottom-shadow');
@@ -17,14 +14,14 @@ function updateNavBar() {
 		$("header").removeClass('bottom-shadow');
 		$("#go-to-top").addClass('invisible');
 	}
-
-	//console.log($(window).scrollTop());
 }
 
+/* Returns a boolean, true when it's my birthday (July 24th) */
 function isBirthday(day, month){
 	return month == 7 && day == 24;
 }
 
+/* Function to calculate the age that I have to display it in the basic information, according to my birthday. */
 function calculateAge(day, month, year) {
 	let day_birth = 24;
 	let month_birth = 7;
@@ -36,6 +33,24 @@ function calculateAge(day, month, year) {
 		age--;
 		return age;
 	}
+}
+
+function updateProjectPreviewIn() {
+	/*$(this).css("background-color", "var(--blue)");
+	$(this).children('.project-name').css("color", "var(--white)");*/
+	$(this).children('.project-name').css({
+		'background-color': 'var(--blue)',
+		color: 'var(--white)'
+	});
+}
+
+function updateProjectPreviewOut() {
+	/*$(this).css("background-color", "");
+	$(this).children('.project-name').css("color", "");*/
+	$(this).children('.project-name').css({
+		'background-color': '',
+		color: ''
+	});
 }
 
 $(document).ready(function() {
@@ -52,4 +67,5 @@ $(document).ready(function() {
 		$("#my-age").html('<i class="fas fa-calendar-day blue-icon"></i>' + age + " years old");
 	}
 	
+	$(".project-preview").hover(updateProjectPreviewIn, updateProjectPreviewOut);
 });
