@@ -57,11 +57,11 @@ $(document).ready(function() {
 	$(window).on('scroll', updateNavBar);
 
 	let dt = new Date();
-	let age = calculateAge(dt.getUTCDate(), dt.getUTCMonth()+1, dt.getUTCFullYear());
+	let age = calculateAge(dt.getDate(), dt.getMonth()+1, dt.getFullYear());
 	
 	// Update the tag in the whoami section to display the correct age without having to update it manually
 	// When it's my birthday is displayed as well.
-	if(isBirthday(dt.getUTCDate(), dt.getUTCMonth()+1)){
+	if(isBirthday(dt.getDate(), dt.getMonth()+1)){
 		$("#my-age").html('<i class="fas fa-calendar-day blue-icon"></i>' + "Today is my birthday!! I'm turning " + age);	
 	}else{
 		$("#my-age").html('<i class="fas fa-calendar-day blue-icon"></i>' + age + " years old");
