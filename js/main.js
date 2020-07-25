@@ -27,10 +27,12 @@ function calculateAge(day, month, year) {
 	let month_birth = 7;
 	let year_birth = 1999;
 	let age = year - year_birth;
-	if(isBirthday(day, month)){
-		return age;
-	}else if(month <= month_birth && day <= day_birth){
+	console.log(age);
+	
+	if(month <= month_birth && day <= day_birth){
 		age--;
+		return age;
+	}else{
 		return age;
 	}
 }
