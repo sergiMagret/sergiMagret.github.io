@@ -58,6 +58,14 @@ h3.section-title {
 	font-weight: normal;
 }
 
+footer {
+	background-color: var(--dark-blue);
+	color: var(--white);
+	/*height: 40px;*/
+	font-size: 0.8rem;
+	padding: 10px 0px;
+}
+
 /**********************************************/
 
 .full-width {
@@ -95,14 +103,35 @@ h3.section-title {
 }
 
 .section-title {
+	padding-top: 50px;
+}
+
+.section-title > h2 {
 	text-align: center;
 	color: var(--blue);
 	font-family: Inconsolata, monospace;
-	font-weight: bold;
 	margin: 0px auto;
 	display: block;
-	font-size: 1.5em;
-	padding-top: 50px;
+	position: relative;
+	font-size: 2rem;
+}
+
+.section-title > h2::before, .section-title > h2::after {
+	content: '';
+	width: 35%;
+	height: 3px;
+	background-color: var(--dark-blue);
+	position: absolute;
+	display: block;
+	top: 50%;
+}
+
+.section-title > h2::before {
+	left: 0;
+}
+
+.section-title > h2::after {
+	right: 0;
 }
 
 .project-preview {
@@ -142,6 +171,61 @@ h3.section-title {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.blink {
+	animation: blinker 2s step-start 0s infinite;
+ 	-webkit-animation: blinker 2s step-start 0s infinite;
+}
+
+.network {
+	margin: 1% 5%;
+	position: relative;
+  	display: inline-block;
+}
+
+.network .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	bottom: 115%;
+	left: 50%;
+	margin-left: -60px;
+	background-color: var(--dark-blue);
+	color: var(--white);
+	text-align: center;
+	padding: 3px 2px;
+	border-radius: 6px;
+	font-size: 0.9rem;
+	/*transition: visibility 0.2s;*/
+
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
+
+.network:hover .tooltiptext {
+	visibility: visible;
+}
+
+.network .tooltiptext::after {
+	content: " ";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: black transparent transparent transparent;
+}
+
+.network > a > i {
+	color: var(--blue);
+	transition: all 0.2s;
+}
+
+.network:hover > a > i {
+	color: var(--dark-blue);
+	transform: translateY(5px);
 }
 
 /**********************************************/
@@ -300,7 +384,11 @@ h3.section-title {
 	font-weight: bold;
 }
 
-
+#social > ul {
+	list-style-type: none;
+	margin-top: 10px;
+	padding: 0px;
+}
 
 /**********************************************/
 
@@ -308,6 +396,10 @@ h3.section-title {
 @media (max-width: 1000px) {
 	#main_name h1 {
 		font-size: 2em;
+	}
+
+	.section-title > h2::before, .section-title > h2::after {
+		width: 30%;
 	}
 }
 
@@ -324,6 +416,10 @@ h3.section-title {
 	#curriculums button {
 		width: 100%;
 		margin: 0.5rem;
+	}
+
+	.section-title > h2::before, .section-title > h2::after {
+		width: 24%;
 	}
 }
 
@@ -343,4 +439,21 @@ h3.section-title {
 	#main-info {
 		margin: 0.5rem;
 	}
+
+	.section-title > h2::before, .section-title > h2::after {
+		visibility: hidden;
+	}
+}
+
+/**********************************************/
+
+@keyframes blinker {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0.0;
+  }
 }
