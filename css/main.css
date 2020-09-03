@@ -46,6 +46,7 @@ body::before {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	z-index: -1;
 }
 
 body {
@@ -273,6 +274,12 @@ footer {
 
 #go-to-top > a > i:hover {
 	color: var(--blue);
+}
+
+#particles-js {
+	height: 100% !important;
+	width: 100% !important;
+	position: absolute;
 }
 
 #cover {
