@@ -38,8 +38,6 @@ function calculateAge(day, month, year) {
 }
 
 function updateProjectPreviewIn() {
-	/*$(this).css("background-color", "var(--blue)");
-	$(this).children('.project-name').css("color", "var(--white)");*/
 	$(this).children('.project-name').css({
 		'background-color': 'var(--blue)',
 		color: 'var(--white)'
@@ -47,8 +45,6 @@ function updateProjectPreviewIn() {
 }
 
 function updateProjectPreviewOut() {
-	/*$(this).css("background-color", "");
-	$(this).children('.project-name').css("color", "");*/
 	$(this).children('.project-name').css({
 		'background-color': '',
 		color: ''
