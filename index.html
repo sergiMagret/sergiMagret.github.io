@@ -15,7 +15,7 @@
 	<meta property="og:type" content="profile">
 	<meta property="og:profile:first_name" content="Sergi">
 	<meta property="og:profile:last_name" content="Magret Goy">
-	<meta property="og:image" content="img/whoami/this_is_me.jpg">
+	<meta property="og:image" content="sergimagret.netlify.app/img/whoami/this_is_me.jpg">
 	<meta property="og:image:type" content="image/jpg">
 	<meta property="og:url" content="https://sergimagret.netlify.app">
 
@@ -37,6 +37,8 @@
 
   	<!-- animate.css -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+  	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/alphardex/aqua.css@master/dist/aqua.min.css">
 
   	<script src="js/main.js"></script>
 </head>
@@ -84,10 +86,10 @@
 							</ul>
 				  		</div>
 				  		<div id="curriculums" class="d-flex flex-row justify-content-between full-width">
-				  			<button class="btn">
+				  			<button class="blue-btn">
 				  				<a href="files/C.V_Sergi_Magret_English.pdf" class="d-block full-width full-height" target="_blank">C.V</a>
 				  			</button>
-				  			<button class="btn">
+				  			<button class="blue-btn">
 				  				<a href="files/Presentation_letter.pdf" class="d-block full-width full-height" target="_blank">Presentation letter</a>
 				  			</button>
 				  		</div>
@@ -144,9 +146,25 @@
 		  		<div class="section-title">
 		  			<h2>contact me</h2>
 		  		</div>
-		  		<div class="text-center">
-		  			<span class="d-block font-weight-bold" style="margin: 15px 0px 30px 0px;"><i class="fas fa-terminal blink"></i> Any doubts or questions? Just get in touch with me!</span>
-		  			<!-- Formulari de contacte aqui? -->
+		  		
+		  			<span class="d-block font-weight-bold text-center" style="margin: 15px 0px 30px 0px;"><i class="fas fa-terminal blink"></i> Any doubts or questions? Just get in touch with me!</span>
+		  			<form id="contact-form" name="contact" netlify>
+		  				<div class="form-input-material">
+		  					<input type="text" name="name" class="form-control-material full-width" placeholder=" " autocomplete="on" required>
+		  					<label for="name">Name</label>
+		  				</div>
+		  				<div class="form-input-material">
+		  					<input type="text" name="email" class="form-control-material full-width" placeholder=" " autocomplete="on" required>
+		  					<label for="email">Email</label>
+		  				</div>
+		  				<div class="form-input-material">
+		  					<textarea name="content" class="form-control-material full-width" placeholder=" " autocomplete="off" required></textarea>
+		  					<label for="content">Content</label>
+		  				</div>
+		  				<button type="submit" class="submit-btn">
+							<i class="fas fa-paper-plane"></i> Send!
+						</button>
+		  			</form>
 					<div id="social" class="full-width">
 						<ul class="d-flex flex-row justify-content-center flex-wrap">
 							<li class="network">
@@ -175,12 +193,12 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				
 		  	</section>
 		  </div>
   	</main>
   	<footer class="full-width text-center">
-  		<span>Made with <i class="fas fa-heart" style="color: red; position: relative; top: 2px;"></i> by Sergi Magret Goy, updated on August 2020</span>
+  		<span>Made with <i class="fas fa-heart" style="color: red; position: relative; top: 2px;"></i> by Sergi Magret Goy, updated on September 2020</span>
   	</footer>
 
   	<!-- particles.js -->
