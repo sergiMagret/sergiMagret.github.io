@@ -15,7 +15,7 @@
 	<meta property="og:type" content="profile">
 	<meta property="og:profile:first_name" content="Sergi">
 	<meta property="og:profile:last_name" content="Magret Goy">
-	<meta property="og:image" content="sergimagret.netlify.app/img/whoami/this_is_me.jpg">
+	<meta property="og:image" content="/img/whoami/this_is_me.jpg">
 	<meta property="og:image:type" content="image/jpg">
 	<meta property="og:url" content="https://sergimagret.netlify.app">
 
@@ -148,7 +148,7 @@
 		  		</div>
 		  		
 		  			<span class="d-block font-weight-bold text-center" style="margin: 15px 0px 30px 0px;"><i class="fas fa-terminal blink"></i> Any doubts or questions? Just get in touch with me!</span>
-		  			<form id="contact-form" name="contact" netlify>
+		  			<form id="contact-form" method="POST" name="Contact" data-netlify="true" data-netlify-recaptcha="true">
 		  				<div class="form-input-material">
 		  					<input type="text" name="name" class="form-control-material full-width" placeholder=" " autocomplete="on" required>
 		  					<label for="name">Name</label>
@@ -161,6 +161,7 @@
 		  					<textarea name="content" class="form-control-material full-width" placeholder=" " autocomplete="off" required></textarea>
 		  					<label for="content">Content</label>
 		  				</div>
+		  				<div data-netlify-recaptcha="true"></div>
 		  				<button type="submit" class="submit-btn">
 							<i class="fas fa-paper-plane"></i> Send!
 						</button>
