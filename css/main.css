@@ -435,6 +435,7 @@ footer {
 
 #main-info > ul > li {
 	margin: 10px 5px;
+	margin-left: 1rem;
 }
 
 #main-info > ul > li > a {
@@ -443,7 +444,7 @@ footer {
 
 #main-info > ul > li > i {
 	margin-right: 1rem;
-	margin-left: 0.5rem;
+	/*margin-left: 0.5rem;*/
 }
 
 #contact-form {
